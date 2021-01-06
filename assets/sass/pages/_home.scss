@@ -1,0 +1,167 @@
+.search {
+    @include desktop-only {
+        height: 64px;
+    }
+    @include flex-center;
+    background: $dark-grey;
+    width: 100%;
+    height: 56px;
+        &__input {
+            @include desktop-only {
+                width: 240px;
+            }
+            background: none;
+            border: none;
+            text-align: center;
+            width: 160px;
+            height: 100%;
+        }
+        &__icon {
+            font-size: 1.2em;
+            color: $black;
+        }
+        ::placeholder {
+            opacity: 1;
+            color: $black;
+        }
+}
+.about {
+    @include global-padding;
+    @include flex-col;
+    background: $light-grey;
+    align-items: center;
+    text-align: center;
+        &__heading {
+            @include tablet-only {
+                max-width: unset;
+            }
+            max-width: 240px;
+        }
+        &__text {
+            @include tablet-only {
+                max-width: unset;
+            }
+            max-width: 300px;
+            margin: 16px 0 32px 0;
+            color: $font-grey;
+            font-size: 1.1em;
+            line-height: 1.24em;
+        }
+}
+.work {
+    @include global-padding;
+    @include grid-Xcol;
+    background: $white;
+    justify-items: center;
+        &-container {
+            @include tablet-only {
+                width: 400px;
+                margin: auto;
+            }
+            @include desktop-only {
+                grid-template-columns: repeat(3, 3fr);
+                width: 100%;
+            }
+            @include grid-Xcol(1);
+            width: 100%;
+        }
+        &-step {
+            @include tablet-only {
+                max-width: 100%;
+            }
+            @include desktop-only {
+                min-width: 200px;
+            }
+            @include shadow-light;
+            cursor: default;
+            background: $light-grey;
+            display: grid;
+            grid-template-columns: 1fr 1fr 7fr;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 12px;
+            margin: 0 12px;
+            border-radius: 20px;
+            animation: reveal 320ms ease-in-out both;
+            transition: background-color 120ms ease-in-out;
+            @for $i from 1 through 3 {
+                &--#{$i} {
+                    animation-delay: $i * 120ms + 3000ms;
+                }
+            }
+                &:hover {
+                    background: transparentize($primary, 0.84);
+                        > .work-step__icon {
+                            color: $primary;
+                        }
+                }
+            &__number {
+                display: block;
+                @include flex-center;
+                background: linear-gradient($secondary 4%, $primary 100%);
+                color: $white;
+                position: relative;
+                left: -24px;
+                width: 24px;
+                height: 24px;
+                border-radius: 100%;
+            }
+            &__icon {
+                color: transparentize($black, 0.4);
+                position: relative;
+                left: -12px;
+                font-size: 1.4em;
+                justify-self: center;
+                transition: color 120ms ease-in-out;
+            }
+            &__text {
+                position: relative;
+                font-weight: 400;
+            }
+        }
+}
+.rest {
+    @include tablet-only {
+        justify-items: center;
+    }
+    @include global-padding;
+    @include grid-Xcol;
+    background: $light-grey;
+        &-container {
+            @include desktop-only {
+                @include grid-Xcol(2)
+            }
+            @include grid-Xcol;
+        }
+}
+.card {
+    @include tablet-only {
+        max-width: 440px;
+    }
+    @include grid-Xcol(7);
+    @include shadow-light;
+    gap: 0;
+    background: $white;
+    grid-template-rows: repeat(14, 14fr);
+    height: 230px;
+    border-radius: 20px;
+        &__img {
+            grid-column: 1 / span 7;
+            grid-row: 1 / span 10;
+            border-radius: 20px 20px 0 0;
+        }
+        &-info {
+            @include flex-col;
+            justify-content: space-around;
+            grid-column: 1 / span 7;
+            grid-row: 11 / span 4;
+            padding: 10px 16px;
+            transition: background-color 120ms ease-in-out;
+                &__heading {
+                    font-weight: 500;
+                }
+                &__text {
+                    color: $font-grey;
+                }
+        }
+}

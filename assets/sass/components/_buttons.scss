@@ -1,0 +1,16 @@
+.btn {
+    @include shadow-dark;
+    cursor: pointer;
+    background: linear-gradient(to top, $primary 10%, $secondary 50%, $primary 100%);
+    background-size: auto 200%;
+    border: none;
+    align-self: center;
+    color: $white;
+    padding: 16px 28px;
+    border-radius: 24px;
+    transition: background-position 240ms ease-in-out, box-shadow 240ms ease-in-out;
+        &:hover {
+            background-position: bottom center;
+            box-shadow: 4px 0px 16px #343434cc;
+        }
+}

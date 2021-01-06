@@ -1,0 +1,36 @@
+@mixin tablet-only {
+    @media screen and (min-width: $mobile) {
+        @content
+    }
+};
+@mixin desktop-only {
+    @media screen and (min-width: $tablet) {
+        @content
+    }
+};
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+}
+@mixin grid-Xcol ($col: 1) {
+    display: grid;
+    grid-template-columns: repeat($col, $col+fr);
+    gap: 32px;
+}
+@mixin shadow-light {
+    box-shadow: 4px 4px 16px #34343444;
+}
+@mixin shadow-dark {
+    box-shadow: 4px 4px 16px #34343477;
+}
+@mixin global-padding {
+    @include desktop-only {
+        padding: 32px;
+    }
+    padding: 32px 16px;
+}

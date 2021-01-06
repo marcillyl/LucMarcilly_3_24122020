@@ -1,0 +1,20 @@
+.footer {
+    @include global-padding;
+    @include grid-Xcol(1);
+    background: $black;
+    position: relative;
+    z-index: 2;
+    gap: 10px;
+        &__brand {
+            font-family: 'Shrikhand', Arial, Helvetica, sans-serif;
+            color: $white;
+            font-size: 1.6em;
+        }
+        &-choice {
+            display: grid;
+            grid-template-columns: 32px auto;
+        }
+        &__link, &__icon {
+            color: $white;
+        }
+}

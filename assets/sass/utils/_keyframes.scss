@@ -1,0 +1,54 @@
+@keyframes loader {
+    0%      { opacity: 1;
+    }
+    100%    { opacity: 0; visibility: hidden;
+    }
+}
+@keyframes wave {
+    0%      { font-size: 2.8em; opacity: 0;
+    }
+    25%     { font-size: 3.8em; opacity: 0.8;
+    }
+    50%     { font-size: 2.8em; opacity: 0;
+    }
+    75%     { font-size: 3.8em; opacity: 0.8;
+    }
+    100%    { font-size: 2.8em; opacity: 0;
+    }
+}
+@keyframes reveal {
+    0%      { opacity: 0;
+    }
+    100%    { opacity: 1;
+    }
+}
+@keyframes transY {
+    0%      { transform: translateX(12px);
+    }
+    100%    { transform: translateX(0);
+    }
+}
+@keyframes line {
+    0%      { width: 0;
+    }
+    100%    { width: 36px;
+    }
+}
+@keyframes shake {
+    0%      { transform: translateX(0);
+    }
+    25%     { transform: translateX(-3px);
+    }
+    50%     { transform: translateX(0);
+    }
+    75%     { transform: translateX(-6px);
+    }
+    100%    { transform: translateX(0);
+    }
+}
+@keyframes noScroll {
+    0%      { height: 100vh; overflow: hidden; visibility: hidden;
+    }
+    100%    { height: unset; overflow: unset; visibility: visible;
+    }
+}

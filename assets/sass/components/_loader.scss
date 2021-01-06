@@ -1,0 +1,28 @@
+.loader {
+    @include flex-center;
+    background: linear-gradient(to top, $primary 10%, $secondary 100%);
+    background-color: $primary;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    animation: loader 3000ms steps(1, end) both;
+}
+h6 {
+    cursor: default;
+    font-family: 'Shrikhand', Arial, Helvetica, sans-serif;
+    color: $white;
+    letter-spacing: -0.1em;
+    animation: loader 300ms ease-in-out 2700ms both;
+        & span {
+            display: inline-block;
+            animation: wave 2800ms ease-in-out infinite both;
+        }
+        @for $i from 1 through 8 {
+            & :nth-child(#{$i}) {
+                animation-delay: $i * 120ms;
+            }
+        }
+}

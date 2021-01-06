@@ -1,0 +1,27 @@
+.like {
+    @include flex-center;
+    cursor: pointer;
+    grid-column: 7 / span 1;
+    grid-row: 11 / span 4;
+    padding-left: 1em;
+        &__icon {
+            transition: opacity 120ms ease-in-out;
+            font-size: 1.5em;
+        }
+        &__icon--on {
+            background: linear-gradient(to top, $primary 10%, $secondary 100%);
+            background-color: $primary;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            left: -1em;
+            opacity: 0;
+        }
+        &:hover > &__icon--off {
+            opacity: 0;
+        }
+        &:hover > &__icon--on {
+            opacity: 1;
+        }
+}

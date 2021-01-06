@@ -1,0 +1,33 @@
+.header {
+    @include desktop-only {
+        height: 72px;
+    }
+    @include flex-center;
+    background: $white;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    height: 64px;
+    max-width: 1030px;
+    margin: auto;
+    border-bottom: solid 1.5px #34343422;
+        &--home {
+            position: sticky;
+            top: 0;
+        }
+        &__brand {
+            font-family: 'Shrikhand', Arial, Helvetica, sans-serif;
+        }
+        &__icon {
+            @include flex-center;
+            position: absolute;
+            left: 24px;
+            font-size: 1.4em;
+            width: 32px;
+            height: 32px;
+                &:hover > i {
+                    animation: shake 480ms ease-in-out both;
+                }
+        }
+}

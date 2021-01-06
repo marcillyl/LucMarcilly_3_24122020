@@ -1,0 +1,15 @@
+.page {
+    @include grid-Xcol;
+    @include desktop-only {
+        max-width: 1030px;
+    }
+    gap: 0;
+    margin: auto;
+    background: $white;
+        &--home {
+            animation: reveal 360ms ease-in-out 3000ms both, noScroll steps(1, end) 3000ms;
+        }
+        &--menu {
+            background: $light-grey;
+        }
+}
