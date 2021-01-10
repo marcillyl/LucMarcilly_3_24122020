@@ -11,7 +11,6 @@
         &__icon--on {
             background: linear-gradient(to top, $primary 10%, $secondary 100%);
             background-color: $primary;
-            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
